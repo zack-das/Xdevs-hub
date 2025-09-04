@@ -1,0 +1,14 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height */
+}
+
+.content-wrap {
+  flex: 1; /* pushes footer down */
+}
+
+footer {
+  margin-top: auto;
+}

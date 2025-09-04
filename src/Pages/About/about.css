@@ -1,0 +1,594 @@
+:root{
+  --primary-color: #00ff08;
+  --secondary-color: #ff9800;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* container: center content nicely, responsive */
+.connectContainer {
+  min-height: 100vh;            /* full page */
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;          /* horizontally center */
+  justify-content: flex-start;  /* top -> change to center if you want vertical center */
+  width: 100%;
+  background: var(--background-color);
+  font-family: var(--font-family);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.connectContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  -webkit-text-stroke: 2px var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.connectContainer p {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+/* KEEP carousel wrapper narrow and centered */
+.carouselWrap {
+  width: min(800px, 95%); /* responsive */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* make each slide fill the carousel width and center its content */
+.slideCard {
+  width: 100%;
+  padding: 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2.6px 6px #00000020;
+  border-radius: 8px;
+  background: white; /* or transparent */
+  box-sizing: border-box;
+}
+
+/* slide text styles */
+.slideCard h3 {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  -webkit-text-stroke: 1px var(--primary-color);
+}
+
+.slideCard p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+/* CUSTOM arrows positioning (override library defaults safely) */
+.carousel .control-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.custom-arrow.prev {
+  left: -4px;  /* small offset — adjust as needed */
+}
+
+.custom-arrow.next {
+  right: -4px;
+}
+
+/* hide built-in arrow backgrounds if any */
+.carousel .control-arrow:before { content: none; }
+
+/* CUSTOM DOTS (always visible) */
+.custom-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.custom-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.custom-dots .dot.active {
+  background: var(--primary-color);
+  transform: scale(1.12);
+}
+
+.custom-dots .dot:focus-visible {
+  outline: 2px solid #00000030;
+  outline-offset: 3px;
+}
+
+/* make sure library's .slide elements center our slideCard */
+.carousel .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  box-sizing: border-box;
+}
+/* connect.css */
+
+.connectContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff8800;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: hsl(41, 88%, 50%);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffb20c;
+  border: 2px solid #ffa600;
+}
+
+.btn-secondary:hover {
+  background-color: #f8f9fa;
+}
+
+/* Features Carousel */
+.features-section {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.features-section h2 {
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.carouselWrap {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slideCard {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 1rem;
+}
+
+.slideCard .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffd413;
+}
+
+.slideCard h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.custom-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #3cff00;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.custom-arrow.prev {
+  left: -20px;
+}
+
+.custom-arrow.next {
+  right: -20px;
+}
+
+/* Stats Section */
+.stats-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.stats-section h2 {
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  padding: 1.5rem;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: #ffb412;
+  margin-bottom: 1rem;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.stat-item p {
+  color: #7f8c8d;
+}
+
+/* Events Section */
+.events-section {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.events-section h2 {
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.event-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.event-date {
+  font-weight: bold;
+  color: #ffc117;
+  margin-bottom: 0.5rem;
+}
+
+.event-card h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.event-time {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.event-cta {
+  background-color: #ffc70f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.event-cta:hover {
+  background-color: #ffab10;
+}
+
+.section-cta {
+  margin-top: 2rem;
+}
+
+/* Forum Section */
+.forum-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+  margin: 4rem 0;
+}
+
+.forum-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.topics-list {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.topic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.topic-content h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.topic-meta {
+  display: flex;
+  gap: 1rem;
+}
+
+.topic-category {
+  background-color: #e8f4fc;
+  color: #3498db;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.topic-replies {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.topic-join {
+  background-color: transparent;
+  color: #fdc50e;
+  border: 1px solid #fd9103;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.topic-join:hover {
+  background-color: #f0f8ff;
+}
+
+/* Social Section */
+.social-section {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.social-section h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.social-section > p {
+  margin-bottom: 2rem;
+  color: #7f8c8d;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.social-card {
+  display: block;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+}
+
+.social-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffac12;
+}
+
+.social-card h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.social-card p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background-color: #fab51f;
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-content h2 {
+  margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 0.8rem 1.5rem;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .connectContainer {
+    padding: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .topic-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .topic-join {
+    align-self: flex-end;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form button {
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .custom-arrow.prev {
+    left: 0;
+  }
+  
+  .custom-arrow.next {
+    right: 0;
+  }
+}

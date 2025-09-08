@@ -12,8 +12,24 @@ dotenv.config();
 const app = express();
 const prisma = new PrismaClient();
 
-const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || "http://localhost:5174";
-app.use(cors({ origin: FRONTEND_ORIGIN }));
+const allowedOrigins = [
+  "http://localhost:5173", // vite default
+  "http://localhost:5174", // if you sometimes run there
+  process.env.FRONTEND_ORIGIN, // production frontend
+].filter(Boolean); // remove undefined
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps, curl)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // if you use cookies later
+}));
+
 app.use(express.json());
 
 // ensure uploads dir exists

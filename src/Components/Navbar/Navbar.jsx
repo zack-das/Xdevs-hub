@@ -1,16 +1,24 @@
 // src/Components/Navbar/Navbar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { FaSignOutAlt, FaBars, FaTimes } from 'react-icons/fa';
 
 function Navbar({ user, onLogout }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
+
   return (
     <nav>
       <h1>XDevs</h1>
-      <ul>
-        <li><Link className="listItem" to="/">Home</Link></li>
+
+      {/* Desktop menu */}
+      <ul className="desktop-only">
         {user && (
           <>
+            <li><Link className="listItem" to="/">Home</Link></li>
             <li><Link className="listItem" to="/about">About</Link></li>
             <li><Link className="listItem" to="/blogs">Blogs</Link></li>
             <li><Link className="listItem" to="/opinions">Opinions</Link></li>
@@ -19,11 +27,15 @@ function Navbar({ user, onLogout }) {
           </>
         )}
       </ul>
-      <div className="auth-section">
+
+      {/* Auth (desktop only) */}
+      <div className="auth-section desktop-only">
         {user ? (
           <div className="user-info">
-            <span>Welcome, {user.username}</span>
-            <button onClick={onLogout} className="logout-btn">Logout</button>
+            <span>Welcome, {user?.username || "Guest"}</span>
+            <button onClick={onLogout} className="logout-btn">
+              <FaSignOutAlt />
+            </button>
           </div>
         ) : (
           <div className="auth-links">
@@ -32,10 +44,50 @@ function Navbar({ user, onLogout }) {
           </div>
         )}
       </div>
+
+      {/* Mobile hamburger */}
+      <button className="mobile-menu-btn" onClick={toggleSidebar}>
+        <FaBars />
+      </button>
+
+      {/* Sidebar */}
+      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <button className="close-btn" onClick={closeSidebar}>
+          <FaTimes />
+        </button>
+        <ul>
+         
+          {user && (
+            <>
+              <li><Link onClick={closeSidebar} className="listItem" to="/">Home</Link></li>
+              <li><Link onClick={closeSidebar} className="listItem" to="/about">About</Link></li>
+              <li><Link onClick={closeSidebar} className="listItem" to="/blogs">Blogs</Link></li>
+              <li><Link onClick={closeSidebar} className="listItem" to="/opinions">Opinions</Link></li>
+              <li><Link onClick={closeSidebar} className="listItem" to="/leadership">Leadership</Link></li>
+              <li><Link onClick={closeSidebar} className="listItem" to="/trackers">Trackers</Link></li>
+            </>
+          )}
+        </ul>
+
+        {/* Auth (mobile sidebar) */}
+        <div className="auth-section">
+          {user ? (
+            <div className="user-info">
+              <span>Welcome, {user?.username || "Guest"}</span>
+              <button onClick={() => { onLogout(); closeSidebar(); }} className="logout-btn">
+                <FaSignOutAlt />
+              </button>
+            </div>
+          ) : (
+            <div className="auth-links">
+              <Link onClick={closeSidebar} to="/login" className="auth-link">Login</Link>
+              <Link onClick={closeSidebar} to="/signup" className="auth-link signup">Sign Up</Link>
+            </div>
+          )}
+        </div>
+      </div>
     </nav>
   );
 }
 
 export default Navbar;
-
-

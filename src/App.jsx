@@ -12,7 +12,7 @@ import BlogList from './Components/Blog/BlogList';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -20,7 +20,6 @@ function App() {
     if (token && userData) {
       setUser(JSON.parse(userData));
     }
-    setLoading(false);
   }, []);
 
   const handleLogin = (userData) => setUser(userData);
@@ -35,7 +34,7 @@ function App() {
     return user ? children : <Navigate to="/login" />;
   };
 
-  if (loading) return <div>Loading...</div>;
+ 
 
   return (
     <BrowserRouter>

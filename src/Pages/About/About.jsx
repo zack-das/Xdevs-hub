@@ -6,7 +6,7 @@ import {
   FaForumbee, 
   FaRocketchat, 
   FaUsers, 
-  FaCalendarAlt, 
+  FaCalendarAlt,   
   FaBook, 
   FaLaptopCode,
   FaDiscord,

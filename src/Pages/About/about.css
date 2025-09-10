@@ -180,19 +180,19 @@
 }
 
 .btn-primary {
-  background-color: #ff8800;
+  background-color: #21ff00;
   color: white;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: hsl(41, 88%, 50%);
+  background-color: #3fd728;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #ffb20c;
-  border: 2px solid #ffa600;
+  color: #21ff00;
+  border: 2px solid #21ff00;
 }
 
 .btn-secondary:hover {
@@ -227,7 +227,7 @@
 .slideCard .icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #ffd413;
+  color: #21ff00;
 }
 
 .slideCard h3 {
@@ -308,7 +308,7 @@
 
 .stat-icon {
   font-size: 2.5rem;
-  color: #ffb412;
+  color: #21ff00;
   margin-bottom: 1rem;
 }
 
@@ -350,7 +350,7 @@
 
 .event-date {
   font-weight: bold;
-  color: #ffc117;
+  color: #21ff00;
   margin-bottom: 0.5rem;
 }
 
@@ -365,7 +365,7 @@
 }
 
 .event-cta {
-  background-color: #ffc70f;
+  background-color: #21ff00;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -374,7 +374,7 @@
 }
 
 .event-cta:hover {
-  background-color: #ffab10;
+  background-color: #21ff00;
 }
 
 .section-cta {
@@ -435,8 +435,8 @@
 
 .topic-join {
   background-color: transparent;
-  color: #fdc50e;
-  border: 1px solid #fd9103;
+  color: #21ff00;
+  border: 1px solid #21ff44;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
@@ -489,7 +489,7 @@
 .social-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #ffac12;
+  color: #21ff00;
 }
 
 .social-card h3 {
@@ -504,7 +504,8 @@
 
 /* Newsletter Section */
 .newsletter-section {
-  background-color: #fab51f;
+  background-color: #21ff00;
+  border-radius: 5px;
   color: white;
   padding: 4rem 0;
   text-align: center;

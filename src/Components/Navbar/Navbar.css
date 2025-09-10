@@ -6,9 +6,12 @@ nav {
   padding: 1rem 2rem;
   background-color: #000000;
   color: white;
-  position: relative;
-  z-index: 1000;
+
+  position: sticky;  /* stays within normal flow */
+  top: 0;            /* sticks to top when scrolling */
+  z-index: 1000;     /* stays above other elements */
 }
+
 
 nav h1 {
   margin: 0;
@@ -27,6 +30,7 @@ nav ul {
   color: white;
   text-decoration: none;
   transition: color 0.3s;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
 }
 

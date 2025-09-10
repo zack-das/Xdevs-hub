@@ -21,9 +21,7 @@ function Navbar({ user, onLogout }) {
             <li><Link className="listItem" to="/">Home</Link></li>
             <li><Link className="listItem" to="/about">About</Link></li>
             <li><Link className="listItem" to="/blogs">Blogs</Link></li>
-            <li><Link className="listItem" to="/opinions">Opinions</Link></li>
-            <li><Link className="listItem" to="/leadership">Leadership</Link></li>
-            <li><Link className="listItem" to="/trackers">Trackers</Link></li>
+            <li><Link className="listItem" to="/contact">Contact Us</Link></li>
           </>
         )}
       </ul>
@@ -62,9 +60,7 @@ function Navbar({ user, onLogout }) {
               <li><Link onClick={closeSidebar} className="listItem" to="/">Home</Link></li>
               <li><Link onClick={closeSidebar} className="listItem" to="/about">About</Link></li>
               <li><Link onClick={closeSidebar} className="listItem" to="/blogs">Blogs</Link></li>
-              <li><Link onClick={closeSidebar} className="listItem" to="/opinions">Opinions</Link></li>
-              <li><Link onClick={closeSidebar} className="listItem" to="/leadership">Leadership</Link></li>
-              <li><Link onClick={closeSidebar} className="listItem" to="/trackers">Trackers</Link></li>
+               <li><Link onClick={closeSidebar} className="listItem" to="/contact">Contact Us</Link></li>
             </>
           )}
         </ul>

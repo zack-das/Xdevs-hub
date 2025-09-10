@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import Login from './Components/Auth/Login';
 import Signup from './Components/Auth/Signup';
 import BlogList from './Components/Blog/BlogList';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -58,6 +59,7 @@ function App() {
                 <Route path="/blogs" element={<ProtectedRoute><BlogList /></ProtectedRoute>} />
                 {/* opinions, leadership, trackers can go here too */}
                 <Route path="*" element={<Navigate to="/" />} />
+                <Route path="/contact" element={<Contact />} />
               </>
             )}
           </Routes>

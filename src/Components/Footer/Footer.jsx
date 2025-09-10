@@ -48,7 +48,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footerBottom">
-                    <p>&copy; 2024 XDevs Code Hub. All rights reserved.</p>
+                    <p>&copy; 2025 XDevs Code Hub. All rights reserved.</p>
                 </div>
             </footer>
         </>

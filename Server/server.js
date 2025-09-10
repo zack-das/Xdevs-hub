@@ -15,7 +15,7 @@ const prisma = new PrismaClient();
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 const FRONTEND_ORIGIN =
-  process.env.FRONTEND_ORIGIN || "*";
+  process.env.FRONTEND_ORIGIN || "https://xdevscodehub-1sd.onrender.com";
 
 const allowedOrigins = [FRONTEND_ORIGIN].filter(Boolean);
 

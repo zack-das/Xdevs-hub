@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "./about.css";
 import { 
   FaForumbee, 
@@ -34,6 +35,17 @@ function About() {
     { title: "Getting started with Python data analysis", replies: 28, category: "Data Science" },
     { title: "Deploying containers in production environments", replies: 35, category: "DevOps" }
   ];
+const settings = {
+    dots: true,
+   infinite: true,          // allows infinite loop
+  speed: 4000,              // transition speed in ms (default: 500)
+  slidesToShow: 1,         // how many slides visible
+  slidesToScroll: 1,       // how many to move at once
+  cssEase: "ease-in-out",  // makes scroll smooth (linear, ease, ease-in-out, cubic-bezier)
+  autoplay: true,          // auto play slides
+  autoplaySpeed: 3000,     // time per slide (ms)
+  pauseOnHover: true,     
+  };
 
   return (
     <div className="connectContainer">
@@ -56,37 +68,7 @@ function About() {
       <section className="features-section">
         <h2>Community Features</h2>
         <div className="carouselWrap">
-          <Carousel
-            selectedItem={index}
-            onChange={(i) => setIndex(i)}
-            autoPlay
-            infiniteLoop
-            interval={4000}
-            transitionTime={1000}
-            showThumbs={false}
-            showStatus={false}
-            showIndicators={false}
-            swipeable
-            emulateTouch
-            renderArrowPrev={(onClickHandler, hasPrev) =>
-              hasPrev ? (
-                <button className="custom-arrow prev" onClick={onClickHandler} aria-label="Previous slide">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              ) : null
-            }
-            renderArrowNext={(onClickHandler, hasNext) =>
-              hasNext ? (
-                <button className="custom-arrow next" onClick={onClickHandler} aria-label="Next slide">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              ) : null
-            }
-          >
+          <Slider {...settings}>
             {Sections.map((section, i) => (
               <div key={i} className="slideCard">
                 <div className="icon">{section.icon}</div>
@@ -94,19 +76,19 @@ function About() {
                 <p>{section.description}</p>
               </div>
             ))}
-          </Carousel>
+           </Slider>
 
           {/* CUSTOM DOTS */}
-          <div className="custom-dots">
+          {/*<div className="dots">
             {Sections.map((_, i) => (
               <button
                 key={i}
-                className={`dot ${i === index ? "active" : ""}`}
+                className={`dots ${i === index ? "active" : ""}`}
                 onClick={() => setIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}
-          </div>
+          </div>*/}
         </div>
       </section>
 

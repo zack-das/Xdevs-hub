@@ -13,7 +13,6 @@ const app = express();
 const prisma = new PrismaClient();
 
 const allowedOrigins = [
-  "http://localhost:5173", // vite default
   "https://xdevs-hub-1.onrender.com", // if you sometimes run there
   process.env.FRONTEND_ORIGIN, // production frontend
 ].filter(Boolean); // remove undefined
@@ -66,7 +65,7 @@ function authenticateToken(req, res, next) {
 // ================= AUTH =================
 
 // Signup
-app.post("/api/signup", async (req, res) => {
+app.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
   try {
     // basic validation

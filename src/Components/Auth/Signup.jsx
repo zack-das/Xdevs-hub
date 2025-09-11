@@ -34,7 +34,7 @@ function Signup({ onLogin }) {
     setError('');
 
     try {
-      const response = await fetch("https://xdevs-hub.onrender.com/api/signup", {
+      const response = await fetch("https://xdevs-hub.onrender.com/signup", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

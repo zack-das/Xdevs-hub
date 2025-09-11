@@ -14,7 +14,7 @@ const prisma = new PrismaClient();
 
 const allowedOrigins = [
   "http://localhost:5173", // vite default
-  "http://localhost:5174", // if you sometimes run there
+  "https://xdevs-hub-1.onrender.com", // if you sometimes run there
   process.env.FRONTEND_ORIGIN, // production frontend
 ].filter(Boolean); // remove undefined
 

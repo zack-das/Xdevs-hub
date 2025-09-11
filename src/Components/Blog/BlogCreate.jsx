@@ -1,7 +1,7 @@
 // src/Components/Blog/BlogCreate.jsx
 import React, { useState } from 'react';
 import './Blog.css';
-const API_URL = import.meta.env.VITE_API_URL;
+
 
 function BlogCreate({ onBlogCreated }) {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ function BlogCreate({ onBlogCreated }) {
     }
 
     try {
-      const response = await fetch(`${API_URL}/api/blogs`, {
+      const response = await fetch("https://xdevs-hub.onrender.com/api/blogs", {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

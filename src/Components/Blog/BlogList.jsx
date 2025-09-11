@@ -16,7 +16,7 @@ function BlogList() {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch(` ${API_URL}/api/blogs`);
+      const response = await fetch(" https://xdevs-hub.onrender.com/api/blogs");
       if (response.ok) {
         const blogsData = await response.json();
         setBlogs(blogsData);

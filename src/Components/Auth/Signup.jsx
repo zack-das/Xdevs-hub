@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Auth.css';
-const API_URL = import.meta.env.VITE_API_URL;
+
 
 function Signup({ onLogin }) {
   const [formData, setFormData] = useState({
@@ -34,7 +34,7 @@ function Signup({ onLogin }) {
     setError('');
 
     try {
-      const response = await fetch(`${API_URL}/api/signup`, {
+      const response = await fetch("https://xdevs-hub.onrender.com/api/signup", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

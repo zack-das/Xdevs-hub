@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FaHeart, FaTrash, FaComment } from 'react-icons/fa';
 import './Blog.css';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function BlogItem({ blog, onBlogDeleted, onBlogUpdated }) {
   const [showComments, setShowComments] = useState(false);
@@ -23,7 +24,7 @@ function BlogItem({ blog, onBlogDeleted, onBlogUpdated }) {
     onBlogUpdated({ ...blog, likes: newLikes });
 
     try {
-      const response = await fetch(`http://localhost:5000/api/blogs/${blog.id}/like`, {
+      const response = await fetch(`${API_URL}/api/blogs/${blog.id}/like`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

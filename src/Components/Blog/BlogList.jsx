@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import BlogCreate from './BlogCreate';
 import BlogItem from './BlogItem';
 import './Blog.css';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 function BlogList() {
   const [blogs, setBlogs] = useState([]);
@@ -14,7 +16,7 @@ function BlogList() {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/blogs');
+      const response = await fetch(` ${API_URL}/api/blogs`);
       if (response.ok) {
         const blogsData = await response.json();
         setBlogs(blogsData);

@@ -3,19 +3,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #000000;
+  padding: 1rem 1.2rem;
+  background-color: #000;
   color: white;
 
-  position: sticky;  /* stays within normal flow */
-  top: 0;            /* sticks to top when scrolling */
-  z-index: 1000;     /* stays above other elements */
-}
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
+  max-width: 100%;   /* prevent overflow */
+  overflow-x: hidden; /* hides accidental horizontal scroll */
+}
 
 nav h1 {
   margin: 0;
   font-size: 1.5rem;
+  white-space: nowrap; /* avoid text breaking awkwardly */
 }
 
 nav ul {
@@ -23,7 +26,8 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  flex-wrap: wrap; /* allow wrapping if space is too small */
 }
 
 .listItem {
@@ -31,85 +35,20 @@ nav ul {
   text-decoration: none;
   transition: color 0.3s;
   font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .listItem:hover {
   color: #00ff37;
 }
 
-/* Auth */
-.auth-section {
-  display: flex;
-  align-items: center;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logout-btn {
-  color: #fff;
-  background-color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.logout-btn:hover {
-  color: #df4b5a;
-}
-
-.auth-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.auth-link {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.auth-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.auth-link.signup {
-  background-color: #9e9e9e0e;
-}
-
-.auth-link.signup:hover {
-  background-color: #00b318;
-}
-
-/* ----------------------------- */
-/* Mobile sidebar menu styles */
-/* ----------------------------- */
-
-.desktop-only {
-  display: flex;
-}
-.mobile-menu-btn {
-  display: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
-}
-
 /* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -290px; /* hidden by default */
-  width: 260px;
+  right: -100%; /* hidden off screen */
+  width: 80%;   /* responsive width */
+  max-width: 280px; /* doesn’t exceed screen */
   height: 100%;
   background-color: #070707;
   color: white;
@@ -122,30 +61,34 @@ nav ul {
 }
 
 .sidebar.open {
-  right: 0;
+  right: 0; /* slides in */
 }
 
-.sidebar .close-btn {
-  align-self: flex-end;
-  font-size: 1.2rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar .auth-section {
+  margin-top: auto; /* push auth to bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* Mobile adjustments */
 @media (max-width: 898px) {
   .desktop-only {
-    display: none; /* hide normal nav on mobile */
+    display: none;
   }
 
   .mobile-menu-btn {
-    display: block; /* show hamburger */
-  }
-
-  .sidebar ul {
-    flex-direction: column;
-    gap: 1rem;
+    display: block;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
   }
 }

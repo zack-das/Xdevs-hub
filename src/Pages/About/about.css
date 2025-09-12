@@ -261,10 +261,10 @@
   right: -20px;
 }
 
-/* Stats Section */
+/* ---------------- Stats Section ---------------- */
 .stats-section {
   background-color: #f8f9fa;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   text-align: center;
   margin: 4rem 0;
 }
@@ -272,18 +272,27 @@
 .stats-section h2 {
   margin-bottom: 3rem;
   color: #2c3e50;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .stat-item {
   padding: 1.5rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
 }
 
 .stat-icon {
@@ -300,82 +309,25 @@
 
 .stat-item p {
   color: #7f8c8d;
+  font-size: 0.95rem;
 }
 
-/* Events Section */
-.events-section {
-  margin: 4rem 0;
-  text-align: center;
-}
-
-.events-section h2 {
-  margin-bottom: 2rem;
-  color: #2c3e50;
-}
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.event-card {
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: left;
-}
-
-.event-date {
-  font-weight: bold;
-  color: #21ff00;
-  margin-bottom: 0.5rem;
-}
-
-.event-card h3 {
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
-}
-
-.event-time {
-  color: #7f8c8d;
-  margin-bottom: 1rem;
-}
-
-.event-cta {
-  background-color: #21ff00;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.event-cta:hover {
-  background-color: #21ff00;
-}
-
-.section-cta {
-  margin-top: 2rem;
-}
-
-/* Forum Section */
+/* ---------------- Forum Section ---------------- */
 .forum-section {
   background-color: #f8f9fa;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   margin: 4rem 0;
 }
 
 .forum-section h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: #2c3e50;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
 }
 
 .topics-list {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto 2rem;
 }
 
@@ -387,30 +339,34 @@
   padding: 1.5rem;
   margin-bottom: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  gap: 1rem;
+  flex-wrap: wrap; /* ensures no overflow */
 }
 
 .topic-content h3 {
   margin-bottom: 0.5rem;
   color: #2c3e50;
+  font-size: 1.1rem;
 }
 
 .topic-meta {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
 }
 
 .topic-category {
   background-color: #e8f4fc;
   color: #3498db;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-size: 0.8rem;
 }
 
 .topic-replies {
   color: #7f8c8d;
-  font-size: 0.9rem;
 }
 
 .topic-join {
@@ -421,53 +377,79 @@
   border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.3s ease;
 }
 
 .topic-join:hover {
   background-color: #f0f8ff;
 }
 
-/* Social Section */
+.section-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  background-color: #21ff00;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #18cc00;
+}
+
+/* ---------------- Social Section ---------------- */
 .social-section {
   margin: 4rem 0;
+  padding: 4rem 1rem;
   text-align: center;
 }
 
 .social-section h2 {
   margin-bottom: 1rem;
   color: #2c3e50;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
 }
 
 .social-section > p {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: #7f8c8d;
 }
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .social-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .social-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   color: #21ff00;
 }
@@ -475,12 +457,15 @@
 .social-card h3 {
   margin-bottom: 0.5rem;
   color: #2c3e50;
+  font-size: 1.1rem;
 }
 
 .social-card p {
   color: #7f8c8d;
   font-size: 0.9rem;
+  text-align: center;
 }
+
 
 /* Newsletter Section */
 .newsletter-section {

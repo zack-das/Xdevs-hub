@@ -119,7 +119,7 @@ const settings = {
         </div>
       </section>
       {/* Forum Highlights */}
-      <section className="forum-section">
+      {/* <section className="forum-section">
         <h2>Popular Discussion Topics</h2>
         <div className="topics-list">
           {popularTopics.map((topic, index) => (
@@ -138,7 +138,7 @@ const settings = {
         <div className="section-cta">
           <button className="btn-primary">Visit Forums</button>
         </div>
-      </section>
+      </section> */}
 
       {/* Social Connections */}
       <section className="social-section">

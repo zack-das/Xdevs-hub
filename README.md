@@ -79,8 +79,6 @@ Enjoy smooth SPA navigation and responsive UI.
 
 💬 Comment system for blogs
 
-❤️ Like/React functionality on posts
-
 🌍 Multi-language support
 
 📧 Email notifications for new posts
